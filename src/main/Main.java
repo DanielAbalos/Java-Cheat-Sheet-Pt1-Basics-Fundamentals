@@ -1,6 +1,6 @@
 package main;
 
-import javafx.scene.paint.Stop;
+import java.security.Policy.Parameters;
 
 public class Main {
 
@@ -27,6 +27,12 @@ public class Main {
 		boolean bool = true; 		// true or false only
 		char character = 'A'; 		// used to store characters, value determined by ' ' singe quotes
 		
+		/*All data types mentioned above are called primitive data types*/
+		
+		/*String variable is a little bit different to instantiate, you should invoke the
+		object String to create a variable. Sample below.*/
+		String sampleStr = "hello world";
+		
 //----------------------------------------------------------------------------------------------------
 		
 //------------------------- ARITHMETIC OPERATIONS ON NUMBER DATA TYPES -------------------------
@@ -36,8 +42,10 @@ public class Main {
 		/*To use arithmetic on Java we have to make sure that the data type of the variable 
 		that will be holding the result is appropriate to the value.*/
 		
+		System.out.println(sampleStr);
+		
 		/*this piece of code gets the value of intNum that is initialized above and adds 5 to it
-		then displays it below*/
+		then displays it below*/		
 		int sum = intNum + 5;
 		System.out.println("ADDITION : intNum + 5 = " + sum);
 		
@@ -208,8 +216,140 @@ public class Main {
 		System.out.println("\n");
 		 
 		System.out.println("--------------------------------------------------");
+		System.out.println("\n");
 		
-
+		System.out.println("\n\n-------------------- FUNCTIONS -------------------------");
+		
+		//CALLING FUNCTIONS
+		printHelloWorld();
+		functionsWithParameters(sampleStr);
+		
+		/*this function call passes the value of the variable intNum to the
+		function through parameters. And assigns the result of the function
+		to the int variable*/
+		int addFunctionResult = addFunction(intNum);
+		System.out.println(addFunctionResult);
+		createLineSpacer();
+		
+		int secondParameter = 3;
+		int subtractFunctionResult = subtractFunction(intNum, secondParameter);
+		System.out.println(subtractFunctionResult);
+		createLineSpacer();
+		
+		stringFunctions();
+		
+//----------------------------------------------------------------------------------------------------
 	}
-
+	
+//------------------------- JAVA FUNCTIONS -------------------------
+	
+	/*functions are small blocks of code that only runs when it's called.
+	 Calling functions is at line 221*/
+	
+	/*1. to create a function first you have to define its return data type. Return data type
+	are also the same as variable data types. It will determine the data type of the return
+	value of the function. If the function has no return value, the return data type must be
+	void.
+	
+	2. Second is to create a function name, same as creating a variable name, it's up to you
+	
+	3. every function needs a parameter. parameters are values that passed to the functions
+	when called and be used in the execution of the function. To create and use parameters
+	first you have to determine the data type of the value then create a variable name for it
+	enclosed in the parentheses of the function*/
+	
+	/*this piece of code just prints a line and a line break and is called on every functions
+	I created. You can call functions within functions.*/
+	static void createLineSpacer() {
+		System.out.println("--------------------------------------------------");
+		System.out.println("\n");
+	}
+	
+	/*this function is just to print 'Hello World'. Since it has no return value
+	the return data type is void. And since it accepts no parameters, the parentheses
+	are empty. The call is in line 222*/
+	static void printHelloWorld () {
+		System.out.println("executing printHelloWorldFunction");
+		System.out.println("Hello world");
+		createLineSpacer();
+	}
+	
+	/*this function accepts the parameter passed to it and prints it.
+	 The call is in line 223.*/
+	static void functionsWithParameters(String sampleString) {
+		System.out.println("executing functionsWithParameters");
+		System.out.println(sampleString);
+		createLineSpacer();
+	}
+	
+	/*this function takes the value of intNum passed in the function call above and assigns it to x. Then uses x
+	 and adds 5 to it and returns the sum. The data type of this function
+	 is int since it returns an Integer number. The call is in line 225*/
+	static int addFunction(int x) {
+		System.out.println("executing addFunction");
+		/*int sum = x + 10;
+		return sum;*/
+		return x + 10;
+	}
+	
+	/*this function takes two parameters and subtracts it to one another
+	and returns the value. Functions can take as many parameters as you want*/
+	static int subtractFunction(int x, int y) {
+		System.out.println("executing subtractFunction");
+		return x-y;
+	}
+	
+	static void stringFunctions() {
+		
+		System.out.println("\n\n-------------------- STRING FUNCTIONS AND MANIPULATIONS -------------------------");
+		
+		/*This function will explain the common String functions used for 
+		manipulating strings*/
+		
+		/*We will start with a string variable to use as an example*/
+		
+		String sampleString = "Hello World";
+		
+		/*takes integer as a parameter, and uses the parameteras an index 
+		and returns the character in that index, in this case 6*/
+		System.out.println("CHAR AT FUNCTION : " + sampleString.charAt(6));
+		
+		//concatenates or appends or adds another string at the end of the initial string
+		System.out.println("CONCAT FUNCTION : " + sampleString.concat(" using concat function"));
+		
+		//returns the index(int) of the character in the parameter
+		System.out.println("INDEX OF FUNCTION : " + sampleString.indexOf("W"));
+		
+		//checks if the string in the parameters exists in the string. Returns boolean value
+		System.out.println("CONTAINS FUNCTION : " + sampleString.contains("llo"));
+		
+		//checks if the string ends with the string in the parameter. Returns boolean value
+		System.out.println("ENDS WITH FUNCTION : " + sampleString.endsWith("rld"));
+		
+		//Checks if the string is perfectly the same with the string in the parameter. Returns boolean value
+		System.out.println("EQUALS FUNCTION : " + sampleString.equals("Hello World"));
+		
+		//checks if the string is equal with the string in the parameter while ignoring the upper or lowe cases. Returns boolean value
+		System.out.println("EQUALS IGNORE CASE FUNCTION : " + sampleString.equalsIgnoreCase("HELLO WORLD"));
+		
+		//returns the length of the string. Returns int value
+		System.out.println("LENGTH FUNCTION : " + sampleString.length());
+		
+		//replaces all the occurrences of the string in the first parameter, with the string in the second parameter
+		System.out.println("REPLACE FUNCTION : " + sampleString.replace("l", "z"));
+		
+		//cuts the string starting with the index of the parameter.
+		System.out.println("SUBSTRING FUNCTION : " + sampleString.substring(5));
+		
+		//cuts the string starting with the index of the first parameter, and ends with the second parameter
+		System.out.println("SUBSTRING FUNCTION : " + sampleString.substring(5, 9));
+		
+		//makes the whole string into lowercase
+		System.out.println("TO LOWERCASE FUNCTION : " + sampleString.toLowerCase());
+		
+		//makes the whole string into uppercase
+		System.out.println("TO UPPERCASE FUNCTION : " + sampleString.toUpperCase());
+		
+	}
+	
 }
