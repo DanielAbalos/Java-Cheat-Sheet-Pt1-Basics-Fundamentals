@@ -218,6 +218,57 @@ public class Main {
 		System.out.println("--------------------------------------------------");
 		System.out.println("\n");
 		
+//----------------------------------------------------------------------------------------------------
+		
+
+//------------------------- JAVA ARRAYS -------------------------
+		
+		System.out.println("\n\n-------------------- ARRAYS -------------------------");
+		
+		/*arrays are used to store multiple values of the same data type in a single variable
+		 separated by comma*/
+		
+		int[] intArray;
+		String[] food = {"fries", "burger", "pizza", "chicken"};
+
+		/*You can access the values inside the array by its index starting from 0*/
+		System.out.println("FOOD ARRAY index 0 : " + food[0]);
+		System.out.println("FOOD ARRAY index 2 : " + food[2]);
+		System.out.println("FOOD ARRAY index 3 : " + food[3]);
+		
+		/*Loops are commonly used in arrays for easier manipulation*/
+		
+		/*in this code, we used for loop. the variable 'i' in this for loop
+		used to iterate the loop is also used as the index for the array,
+		and we used the length of the array by usng the function
+		'food.length' to determine how long the loopwill run.*/
+		System.out.println("\n");
+		System.out.println("PRINTING FOOD ARRAY THROUGH FOR LOOP");
+		for(int i = 0; i < food.length; i++) {
+			System.out.println("FOOD ARRAY index " + i + ": " + food[i]);
+		}
+		
+		/*in this code we first initialized an array with double
+		datatype. then initialized a double variable which will
+		hold the sum of the numbers that we will add. then using
+		for loop, we iterated each number of the array one by one
+		and add them and storing them to the variable 'loopSum'
+		until the loop is finished*/
+		double[] doubleArray = {12.5, 11, 5, 6.25, 13.2, 8.12, 3};
+		System.out.println("\n");
+		System.out.println("SUM OF doubleArray through for loop");
+		double loopSum = 0;
+		for(int i = 0; i < doubleArray.length; i++) {
+			loopSum += doubleArray[i];
+		}
+		System.out.println("SUM OF ARRAY : " + loopSum);
+		
+		
+//----------------------------------------------------------------------------------------------------
+
+		
+//------------------------- JAVA FUNCTIONS -------------------------		
+		
 		System.out.println("\n\n-------------------- FUNCTIONS -------------------------");
 		
 		//CALLING FUNCTIONS
@@ -238,10 +289,8 @@ public class Main {
 		
 		stringFunctions();
 		
-//----------------------------------------------------------------------------------------------------
-	}
+	}//end of main
 	
-//------------------------- JAVA FUNCTIONS -------------------------
 	
 	/*functions are small blocks of code that only runs when it's called.
 	 Calling functions is at line 221*/
@@ -349,6 +398,36 @@ public class Main {
 		
 		//makes the whole string into uppercase
 		System.out.println("TO UPPERCASE FUNCTION : " + sampleString.toUpperCase());
+		
+		//this function splits the string into chars and store them in an array
+		System.out.println("TO CHAR ARRAY FUNCTION : ");
+		char[] sampleStringArr = sampleString.toCharArray();
+		for(int i = 0; i < sampleStringArr.length; i++) {
+			System.out.println(sampleStringArr[i]);
+		}
+		
+		//this function splits the string in the string in the parameter of the function and stores it to a string array
+		System.out.println("SPLIT FUNCTION : ");
+		String[] sampleStringSplit = sampleString.split(" ");
+		for(int i = 0; i < sampleStringSplit.length; i++) {
+			System.out.println(sampleStringSplit[i]);
+		}
+		
+		System.out.println("\n");
+		
+		//another sample
+		String sample2 = "I want to eat potato corner";
+		String[] sample2Split = sample2.split(" ");
+		for(int i = 0; i < sample2Split.length; i++) {
+			System.out.println(sample2Split[i]);
+		}
+		
+		//another sample
+		String sample3 = "Mississippi";
+		String[] sample3Split = sample3.split("s");
+		for(int i = 0; i < sample3Split.length; i++) {
+			System.out.println(sample3Split[i]);
+		}
 		
 	}
 	
